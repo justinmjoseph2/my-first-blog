@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gmoap=wo0-$jlhr#=cy8ezsbs56bi8iff99^@7ht2fav&8y#w#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
