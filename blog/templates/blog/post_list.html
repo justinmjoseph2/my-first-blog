@@ -2,12 +2,37 @@
 
 {% block content %}
     {% for post in posts %}
-        <article class="post">
+    
+<style>
+@keyframes slide-in {  /* Define the sliding animation */
+  from {
+    transform: translateX(100%);  /* Start from right edge */
+  }
+  to {
+    transform: translateX(0);  /* Slide to the left */
+  }
+}
+
+</style>
+    <div style="height: auto;
+    display: block;
+    background: transparent;
+    opacity:7;
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 5px 10px 1px rgba(0.5, 0.5, 0.5, 0.5);
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    animation: slide-in 0.8s ease-in-out forwards;">
+
+        <article class="post" style="margin-left: 50px; margin-right: 50px; padding-top: 20px; padding-bottom: 20px;">
             <time class="date">
                 {{ post.published_date }}
             </time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <h2><a style="background: linear-gradient(rgb(214, 18, 109), rgb(29, 169, 212)); -webkit-text-fill-color: transparent;-webkit-background-clip: text;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
         </article>
+</div>
     {% endfor %}
 {% endblock %}
